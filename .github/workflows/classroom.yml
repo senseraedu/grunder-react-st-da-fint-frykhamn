@@ -13,18 +13,19 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Cypress tester
-      id: cypress-tester
+    - name: Landing page
+      id: landing-page
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Cypress tester
+        test-name: Landing page
         setup-command: npm install;  npx -y http-server -p 5500 & sleep 10
-        command: " npx -y cypress run --spec cypress/e2e/lab_g.cy.js --env SERVER_PORT=5500"
+        command: " npx -y cypress run --spec cypress/e2e/landing-page.cy.js --env
+          SERVER_PORT=5500"
         timeout: 10
         max-score: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        CYPRESS-TESTER_RESULTS: "${{steps.cypress-tester.outputs.result}}"
+        LANDING-PAGE_RESULTS: "${{steps.landing-page.outputs.result}}"
       with:
-        runners: cypress-tester
+        runners: landing-page
