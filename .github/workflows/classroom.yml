@@ -1,0 +1,30 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Cypress tester
+      id: cypress-tester
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Cypress tester
+        setup-command: npm install;  npx -y http-server -p 5500 & sleep 10
+        command: " npx -y cypress run --spec cypress/e2e/lab_g.cy.js --env SERVER_PORT=5500"
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        CYPRESS-TESTER_RESULTS: "${{steps.cypress-tester.outputs.result}}"
+      with:
+        runners: cypress-tester
