@@ -1,0 +1,44 @@
+{
+  "bookings": [
+    {
+      "id": "1",
+      "date": "2023-10-01T10:00:00Z",
+      "cleaningType": "Diamant",
+      "customerName": "Christian",
+      "cleaner": "Anna",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "date": "2023-10-04T11:00:00Z",
+      "cleaningType": "Silver",
+      "customerName": "Christian",
+      "cleaner": "Anna",
+      "completed": false
+    },
+    {
+      "id": "5",
+      "date": "2023-10-05T13:00:00Z",
+      "cleaningType": "Flytt",
+      "customerName": "Christian",
+      "cleaner": "Erik",
+      "completed": true
+    },
+    {
+      "id": "6",
+      "date": "2023-10-06T15:00:00Z",
+      "cleaningType": "Silver",
+      "customerName": "Christian",
+      "cleaner": "Anna",
+      "completed": false
+    },
+    {
+      "id": "7",
+      "date": "2023-10-07T08:00:00Z",
+      "cleaningType": "Diamant",
+      "customerName": "Christian",
+      "cleaner": "Erik",
+      "completed": false
+    }
+  ]
+}
