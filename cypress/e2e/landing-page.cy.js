@@ -4,7 +4,6 @@
 
 describe('cleaning page', () => {
   beforeEach(() => {
-// Visit the landing page before each test
     cy.visit('http://localhost:5173/')
   })
 
