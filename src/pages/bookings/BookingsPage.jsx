@@ -15,7 +15,7 @@ const BookingsPage = () => {
 
   return (
     <div className="bookings-page">
-      <BookingsForm
+{/*       <BookingsForm
         cleaners={mockCleaners}
         onSubmit={(values) => {
           addBooking({
@@ -39,7 +39,7 @@ const BookingsPage = () => {
       <BookingHistory
         bookings={history}
         onDeleteSelected={deleteHistoryItems}
-      />
+      /> */}
     </div>
   );
 };
