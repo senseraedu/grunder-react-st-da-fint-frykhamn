@@ -18,7 +18,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Landing page
-        setup-command: npm install; npx --yes json-server db.json & npm run dev
+        setup-command: npm install; npx --yes json-server & db.json & npm run dev
         command: " npx -y cypress run --spec cypress/e2e/landing-page.cy.js --env
           SERVER_PORT=5173"
         timeout: 10
