@@ -1,7 +1,7 @@
 // src/api/bookings.js
 import axios from 'axios';
 
-const API_URL = "http://localhost:8081";
+const API_URL = "http://localhost:3000";
 
 export const fetchBookings = async () => {
   try {

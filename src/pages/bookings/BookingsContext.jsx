@@ -19,8 +19,12 @@ export const BookingsProvider = ({ children }) => {
 
   useEffect(() => {
     const loadBookings = async () => {
-      const fetchedBookings = await fetchBookings();
-      setBookings(fetchedBookings);
+      try {
+        const fetchedBookings = await fetchBookings();
+        setBookings(fetchedBookings);
+      } catch (error) {
+        console.error('Failed to load bookings', error);
+      }
     };
 
     loadBookings();
